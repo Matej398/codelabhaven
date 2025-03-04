@@ -8,7 +8,7 @@
     {
         "title": "Nyan_v1",
         "description": "A sleek, user-friendly tool to sign PDFs digitally with ease. Upload your document, sketch your signature, and download—secure and fast, all in your browser. Made with Grok 3.",
-        "link": "nyan",
+        "link": "projects/nyan",
         "screenshot": "screenshots/test1.png"
     }
 ]
