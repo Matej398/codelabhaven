@@ -5,7 +5,6 @@ $projectCount = 0;
 if (file_exists($projectsFile)) {
     $json = file_get_contents($projectsFile);
     $projects = json_decode($json, true);
-    // Ensure $projects is an array before counting
     $projectCount = is_array($projects) ? count($projects) : 0;
 }
 ?>
@@ -18,10 +17,13 @@ if (file_exists($projectsFile)) {
     <title>About - CodeLabHaven</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"> <!-- Favicon added -->
 </head>
 <body>
     <header class="header">
-        <a href="/" class="header-title">codelabhaven</a>
+        <a href="/" class="header-title">
+            <img src="/images/logo.svg" alt="CodeLabHaven Logo" class="header-logo"> <!-- SVG logo -->
+        </a>
         <nav>
             <a href="/projects.php">projects<sup><?php echo $projectCount; ?></sup></a>
             <a href="/about.php" class="active">about</a>

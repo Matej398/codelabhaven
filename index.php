@@ -6,7 +6,6 @@ $projectCount = 0;
 if (file_exists($projectsFile)) {
     $json = file_get_contents($projectsFile);
     $projects = json_decode($json, true);
-    // Ensure $projects is an array before counting
     $projectCount = is_array($projects) ? count($projects) : 0;
 }
 
@@ -22,12 +21,15 @@ $projectSlug = null; // Forcefully disable project subpages for now
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeLabHaven</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Pixelify+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Changed to relative path for local testing -->
 </head>
 <body>
     <header class="header">
-        <a href="/" class="header-title">codelabhaven</a>
+        <a href="/" class="header-title">
+            <img src="/images/logo.svg" alt="CodeLabHaven Logo" class="header-logo">
+        </a>
         <nav>
             <a href="/projects.php">projects<sup><?php echo $projectCount; ?></sup></a>
             <a href="/about.php">about</a>
@@ -38,7 +40,7 @@ $projectSlug = null; // Forcefully disable project subpages for now
             <div class="cursor" id="cursor"></div>
         </div>
         <section class="home-content">
-            <div class="title">not<br>developed<br><span class="black regular">by</span> <span class="regular"><span class="human">human</span><span class="dot">.</span></span></div>
+            <div class="title">not<br>developed<br><span class="black regular">by</span> <span class="regular"><span class="pixel-human">human</span><span class="dot">.</span></span></div>
             <div class="project-titles">
                 <?php foreach ($projects as $project): ?>
                     <div class="project-title">
