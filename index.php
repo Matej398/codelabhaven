@@ -40,7 +40,7 @@ $projectSlug = null; // Forcefully disable project subpages for now
             <div class="cursor" id="cursor"></div>
         </div>
         <section class="home-content">
-            <div class="title">not<br>developed<br><span class="black regular">by</span> <span class="regular"><span class="pixel-human">human</span><span class="dot">.</span></span></div>
+            <div class="title">not.<br>developed<br><span class="black regular">by</span> <span class="regular"><span class="pixel-human">human</span><span class="dot">.</span></span></div>
             <div class="project-titles">
                 <?php foreach ($projects as $project): ?>
                     <div class="project-title">
