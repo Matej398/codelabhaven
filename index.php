@@ -52,7 +52,7 @@ $projectSlug = null; // Forcefully disable project subpages for now
     </main>
     <footer class="footer">
         <div class="footer-text">
-            ©2025 codelabhaven<span class="dot">.</span> design by <a href="https://x.com/TheBlecky398" target="_blank">blecky398</a>
+            ©2025 codelabhaven22222<span class="dot">.</span> design by <a href="https://x.com/TheBlecky398" target="_blank">blecky398</a>
         </div>
         <div class="footer-right">
             powered by grok3
