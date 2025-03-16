@@ -16,5 +16,11 @@
         "description": "A comprehensive collection of terminal commands for GitHub, Windows, Mac, and VPS. Easy to copy commands with explanations. Made with Grok 3.",
         "link": "projects/cmdhub",
         "screenshot": "screenshots/test1.png"
+    },
+    {
+        "title": "pixly",
+        "description": "A comprehensive collection of terminal commands for GitHub, Windows, Mac, and VPS. Easy to copy commands with explanations. Made with Grok 3.",
+        "link": "projects/pixly",
+        "screenshot": "screenshots/test1.png"
     }
 ]
