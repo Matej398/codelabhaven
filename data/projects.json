@@ -12,9 +12,9 @@
         "screenshot": "screenshots/test1.png"
     },
     {
-        "title": "Terminal Cheatsheet",
+        "title": "cmdhub",
         "description": "A comprehensive collection of terminal commands for GitHub, Windows, Mac, and VPS. Easy to copy commands with explanations. Made with Grok 3.",
-        "link": "projects/terminal-cheatsheet",
+        "link": "projects/cmdhub",
         "screenshot": "screenshots/test1.png"
     }
 ]
