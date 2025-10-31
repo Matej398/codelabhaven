@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     overflow-y: hidden; /* Default to no scrolling unless content overflows */
 }
 
@@ -287,37 +288,29 @@ body {
     text-align: left; /* Center the container but align text left */
 }
 
-.about-text {
-    margin-top: 0; /* Remove top margin to align with title */
-}
-
 .about-text p {
-    margin-top: 0; /* Remove top margin to align with title */
-    margin-bottom: 20px; /* Maintain bottom margin for spacing between paragraphs */
-    margin-left: 0; /* Remove left margin for left alignment */
-    margin-right: 0; /* Remove right margin for left alignment */
+    margin-bottom: 20px; /* Increased bottom margin for better spacing between paragraphs */
 }
 
 .projects-page {
     font-size: 18px;
     color: #000000;
     line-height: 1.5;
-    max-width: 90vw; /* Relative sizing instead of fixed pixels */
-    margin: 0 auto; /* Center the container horizontally */
+    max-width: 90vw; /* Relative sizing for projects page */
+    margin: 0 auto;
     position: relative;
-    z-index: 3; /* Increased to ensure text is above cursor on projects list */
+    z-index: 3; /* Increased to ensure text is above cursor on projects page */
     min-height: 100vh; /* Ensure content fits viewport, allowing scroll if needed */
     display: flex; /* Use flex to center content vertically */
     flex-direction: column;
-    justify-content: flex-start; /* Copied from about-page to move content higher */
+    justify-content: flex-start; /* Move content higher, but still center horizontally */
     align-items: center; /* Center content horizontally */
-    padding-top: 40px; /* Copied from about-page to match spacing above title */
+    padding-top: 40px; /* Reduce padding from top to move content higher */
 }
 
 .projects-page .main-title {
-    font-size: clamp(5vw, 60pt, 10vw); /* Relative to screen size, matches about-page */
+    font-size: clamp(5vw, 60pt, 10vw); /* Relative to screen size: min 5vw, default 60pt, max 10vw */
     font-weight: bold;
-    line-height: 1.2; /* Adjusted for larger screens */
     color: #000000;
     text-align: center; /* Centered horizontally */
     text-transform: lowercase;
