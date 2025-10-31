@@ -1,12 +1,25 @@
 <?php
-// Load projects from JSON
-$projectsFile = 'data/projects.json';
+// Load projects from repositories.json
+$repoFile = '/var/www/html/codelabhaven/repositories.json';
 $projects = [];
 $projectCount = 0;
-if (file_exists($projectsFile)) {
-    $json = file_get_contents($projectsFile);
-    $projects = json_decode($json, true);
-    $projectCount = is_array($projects) ? count($projects) : 0;
+
+if (file_exists($repoFile)) {
+    $json = file_get_contents($repoFile);
+    $data = json_decode($json, true);
+    
+    if (isset($data['repositories']) && is_array($data['repositories'])) {
+        foreach ($data['repositories'] as $repo) {
+            // Skip the main codelabhaven site, only show projects
+            if ($repo['name'] !== 'codelabhaven') {
+                $projects[] = [
+                    'title' => ucfirst(str_replace('_', ' ', $repo['name'])),
+                    'link' => '/projects/' . $repo['name'] . '/'
+                ];
+            }
+        }
+        $projectCount = count($projects);
+    }
 }
 
 // Get the project slug from the URL (e.g., /signeasy) - disabled for now
