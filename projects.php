@@ -12,9 +12,11 @@ if (file_exists($repoFile)) {
         foreach ($data['repositories'] as $repo) {
             // Skip the main codelabhaven site, only show projects
             if ($repo['name'] !== 'codelabhaven') {
+                // Special handling for crypto_folio - use external URL
+                $link = ($repo['name'] === 'crypto_folio') ? 'https://poorty.com' : '/projects/' . $repo['name'] . '/';
                 $projects[] = [
                     'title' => ucfirst(str_replace('_', ' ', $repo['name'])),
-                    'link' => '/projects/' . $repo['name'] . '/'
+                    'link' => $link
                 ];
             }
         }
