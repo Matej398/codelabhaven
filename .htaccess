@@ -4,9 +4,9 @@ RewriteEngine On
 RewriteCond %{REQUEST_URI} ^/projects/crypto_folio/?$ [NC]
 RewriteRule ^projects/crypto_folio/?$ https://poorty.com [R=301,L]
 
-# Redirect /projects/{name}/ to subdomain format (all other projects)
-# Pass project name to redirect.php for underscore-to-hyphen conversion
-# This redirects even if the directory exists
+# Redirect ALL /projects/{name}/ requests to redirect.php
+# This catches both directory and non-directory requests
+# The PHP script will handle the underscore-to-hyphen conversion
 RewriteCond %{REQUEST_URI} ^/projects/([^/]+)/?$ [NC]
 RewriteRule ^projects/([^/]+)/?$ /redirect.php?project=$1 [L,QSA]
 
