@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Special case: crypto_folio redirects to poorty.com
+RewriteCond %{REQUEST_URI} ^/projects/crypto_folio/?$ [NC]
+RewriteRule ^projects/crypto_folio/?$ https://poorty.com [R=301,L]
+
+# Redirect /projects/{name}/ to subdomain format (all other projects)
+# Convert underscores to hyphens in subdomain
+RewriteCond %{REQUEST_URI} ^/projects/([^/]+)/?$ [NC]
+RewriteRule ^projects/([^/]+)/?$ /redirect.php [L]
+
