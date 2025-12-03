@@ -1,17 +1,26 @@
 <?php
 /**
  * Redirect handler for /projects/{name}/ URLs to subdomains
- * This is a fallback if .htaccess is not available or not working
+ * Converts underscores to hyphens for subdomain format
  */
 
-// Get the project name from the URL
-$uri = $_SERVER['REQUEST_URI'];
-$parts = explode('/', trim($uri, '/'));
+// Get the project name from query parameter (passed by .htaccess) or from URL
+$projectName = null;
 
-// Check if this is a /projects/{name}/ request
-if (isset($parts[0]) && $parts[0] === 'projects' && isset($parts[1])) {
-    $projectName = $parts[1];
+if (isset($_GET['project'])) {
+    // Get from query parameter (when called via .htaccess rewrite)
+    $projectName = $_GET['project'];
+} else {
+    // Fallback: parse from REQUEST_URI if accessed directly
+    $uri = $_SERVER['REQUEST_URI'];
+    $parts = explode('/', trim($uri, '/'));
     
+    if (isset($parts[0]) && $parts[0] === 'projects' && isset($parts[1])) {
+        $projectName = $parts[1];
+    }
+}
+
+if ($projectName) {
     // Special handling for crypto_folio - redirect to its own domain
     if ($projectName === 'crypto_folio') {
         header('Location: https://poorty.com', true, 301);
