@@ -13,7 +13,13 @@ if (file_exists($repoFile)) {
             // Skip the main codelabhaven site, only show projects
             if ($repo['name'] !== 'codelabhaven') {
                 // Special handling for crypto_folio - use external URL
-                $link = ($repo['name'] === 'crypto_folio') ? 'https://poorty.com' : '/projects/' . $repo['name'] . '/';
+                if ($repo['name'] === 'crypto_folio') {
+                    $link = 'https://poorty.com';
+                } else {
+                    // Convert underscores to hyphens for subdomain format
+                    $subdomainName = str_replace('_', '-', $repo['name']);
+                    $link = 'https://' . $subdomainName . '.codelabhaven.com';
+                }
                 $projects[] = [
                     'title' => ucfirst(str_replace('_', ' ', $repo['name'])),
                     'link' => $link
